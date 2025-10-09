@@ -4,7 +4,7 @@
   tasks:
   - name: installing mysql server
     ansible.builtin.package:
-      name: mysql
+      name: mysql_server
       state: present
 
   - name: start and enable mysql
@@ -14,4 +14,4 @@
       state: started 
 
   - name: setup root password 
-    ansible.builtin.command: mysql_secure_installation --set-root-pass RoboShop@1
+    ansible.builtin.command: mysql_secure_installation --set-root-pass 'RoboShop@1'
